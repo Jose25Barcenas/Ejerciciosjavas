@@ -1,37 +1,31 @@
+const multiplicarArreglo = (arreglo) => {
+    return arreglo.reduce((producto, Elemento) => producto * Elemento, 1);
+}
 
-function ContrasenaValida (contrasenaValida){
-    if (contrasenaValida === "2Fj(jjbFsuj" || contrasenaValida === "eoZiugBf&g9"){
-      return true;
-    }else {
-     return false;
-}
-    
-}
- // código de prueba
-console.log(contrasenaValida("2Fj(jjbFsuj")) // true
-console.log(contrasenaValida("eoZiugBf&g9")) // true
-console.log(contrasenaValida("hola")) // false
-console.log(contrasenaValuda("")) // false
+// código de prueba
+console.log(multiplicarArreglo([4, 1, 2, 3])) // 24
+console.log(multiplicarArreglo([1, 2, 3, 4, 5, 6, 7, 8])) // 40320
+console.log(multiplicarArreglo([])) // 1
 //---------------------------------------------------------
 
-function bmi(peso,altura){
-    cost= peso/Math.pow(altura*2);
-  
- if (bmi <= 18.5) {
-        return "Bajo de peso";
-    } else if (bmi <= 24.9) {
-        return "Normal";
-    } else if (bmi <= 30) {
-        return "Sobrepeso";
-    } else if (bmi > 30){
-        return "Obeso";
-    }
+function numerosAPalabras(arreglo) {
+    const numerosEnPalabras = [
+        "cero", "uno", "dos", "tres", "cuatro",
+        "cinco", "seis", "siete", "ocho", "nueve"
+    ];
+
+    const resultado = arreglo.map(numero => numerosEnPalabras[numero]);
+    return resultado;
 }
-// código de prueba
-console.log(bmi(65, 1.8)) // "Normal"
-console.log(bmi(72, 1.6)) // "Sobrepeso"
-console.log(bmi(52, 1.75)) //  "Bajo de peso"
-console.log(bmi(135, 1.7)) // "Obeso"
+
+function numerosAPalabrasInteractivo() {
+    const input = prompt("Ingrese los números separados por comas:");
+    const numeros = input.split(",").map(Number);
+    const resultado = numerosAPalabras(numeros);
+    console.log("Números en palabras:", resultado);
+}
+
+numerosAPalabrasInteractivo();
 //---------------------------------------------------------
 
 const imprimirArreglo = (arr) => {
@@ -98,14 +92,20 @@ console.log(sumarArreglo([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])) // 55
 console.log(sumarArreglo([])) // 0
 //---------------------------------------------------------
 
-const multiplicarArreglo = (arreglo) => {
-    return arreglo.reduce((producto, Elemento) => producto * Elemento, 1);
+function ContrasenaValida (contrasenaValida){
+    if (contrasenaValida === "2Fj(jjbFsuj" || contrasenaValida === "eoZiugBf&g9"){
+      return true;
+    }else {
+     return false;
 }
+    
+}
+ // código de prueba
+console.log(contrasenaValida("2Fj(jjbFsuj")) // true
+console.log(contrasenaValida("eoZiugBf&g9")) // true
+console.log(contrasenaValida("hola")) // false
+console.log(contrasenaValuda("")) // false
 
-// código de prueba
-console.log(multiplicarArreglo([4, 1, 2, 3])) // 24
-console.log(multiplicarArreglo([1, 2, 3, 4, 5, 6, 7, 8])) // 40320
-console.log(multiplicarArreglo([])) // 1
 //---------------------------------------------------------
 
 const removerCeros = (arreglo) => {
